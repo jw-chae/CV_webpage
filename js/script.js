@@ -1,332 +1,207 @@
 // ==================== 
-// Navigation Menu Toggle
+// Navigation & Section Switching
 // ==================== 
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Close menu when clicking on a nav link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
-
-// ==================== 
-// Smooth Scrolling with Active Link
-// ==================== 
-const sections = document.querySelectorAll('section');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-
+    // Handle navigation clicks
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get target section
+            const targetSection = this.getAttribute('data-section');
+            
+            // Remove active class from all links and sections
+            navLinks.forEach(l => l.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            
+            // Add active class to clicked link and target section
+            this.classList.add('active');
+            document.getElementById(targetSection).classList.add('active');
+            
+            // Update URL hash without scrolling
+            history.pushState(null, null, `#${targetSection}`);
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    // Handle initial load with hash
+    function loadSectionFromHash() {
+        const hash = window.location.hash.substring(1) || 'home';
+        const targetLink = document.querySelector(`[data-section="${hash}"]`);
+        
+        if (targetLink) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            
+            targetLink.classList.add('active');
+            document.getElementById(hash).classList.add('active');
+        }
+    }
+
+    // Load correct section on page load
+    loadSectionFromHash();
+
+    // Handle browser back/forward buttons
+    window.addEventListener('hashchange', loadSectionFromHash);
+});
+
+// ==================== 
+// Smooth Scroll for Internal Links
+// ==================== 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href.length <= 1) return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
 });
 
 // ==================== 
-// Navbar Background on Scroll
+// Navbar Scroll Effect
 // ==================== 
+let lastScrollTop = 0;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(15, 15, 30, 0.98)';
-        navbar.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.5)';
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        navbar.style.transform = 'translateY(-100%)';
     } else {
-        navbar.style.background = 'rgba(15, 15, 30, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        // Scrolling up
+        navbar.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}, false);
+
+// ==================== 
+// External Links - Open in New Tab
+// ==================== 
+document.querySelectorAll('a[href^="http"]').forEach(link => {
+    if (!link.getAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
     }
 });
 
 // ==================== 
-// Animated Number Counter
+// Print Friendly
 // ==================== 
-const counters = document.querySelectorAll('.stat-number');
-const speed = 200;
-let hasAnimated = false;
-
-const animateCounters = () => {
-    if (hasAnimated) return;
+function printPage() {
+    // Show all sections for printing
+    document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'block';
+    });
     
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const increment = target / speed;
-        
-        const updateCounter = () => {
-            const current = +counter.innerText;
-            
-            if (current < target) {
-                counter.innerText = Math.ceil(current + increment);
-                setTimeout(updateCounter, 10);
-            } else {
-                counter.innerText = target + '+';
+    window.print();
+    
+    // Restore original state after printing
+    setTimeout(() => {
+        document.querySelectorAll('.section').forEach(section => {
+            if (!section.classList.contains('active')) {
+                section.style.display = 'none';
             }
-        };
-        
-        updateCounter();
-    });
-    
-    hasAnimated = true;
-};
-
-// Trigger counter animation when About section is visible
-const observerOptions = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-        }
-    });
-}, observerOptions);
-
-const aboutSection = document.querySelector('.about-stats');
-if (aboutSection) {
-    observer.observe(aboutSection);
+        });
+    }, 1000);
 }
 
-// ==================== 
-// Scroll Animations
-// ==================== 
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.skill-category, .project-card, .detail-item');
-    
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        
-        if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
-};
-
-// Initialize elements with hidden state
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.skill-category, .project-card, .detail-item');
-    elements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-});
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
-
-// ==================== 
-// Contact Form Handler
-// ==================== 
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+// Add keyboard shortcut for printing (Ctrl/Cmd + P is already default, but we can add our custom handler)
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
         e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        // Here you would typically send the form data to a server
-        // For now, we'll just show an alert
-        alert(`메시지를 보내주셔서 감사합니다, ${name}님!\n이메일: ${email}\n\n곧 연락드리겠습니다.`);
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
-
-// ==================== 
-// Typing Effect for Hero Section
-// ==================== 
-const typingText = document.querySelector('.hero-subtitle');
-if (typingText) {
-    const text = typingText.textContent;
-    typingText.textContent = '';
-    let index = 0;
-    
-    const typeWriter = () => {
-        if (index < text.length) {
-            typingText.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 100);
-        }
-    };
-    
-    // Start typing effect after page loads
-    setTimeout(typeWriter, 1000);
-}
-
-// ==================== 
-// Parallax Effect for Hero Section
-// ==================== 
-window.addEventListener('scroll', () => {
-    const heroImage = document.querySelector('.profile-circle');
-    if (heroImage) {
-        const scrolled = window.pageYOffset;
-        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+        printPage();
     }
 });
 
 // ==================== 
-// Dynamic Gradient Background
+// Accessibility: Keyboard Navigation
 // ==================== 
-let gradientAngle = 135;
-const heroSection = document.querySelector('.hero');
-
-if (heroSection) {
-    setInterval(() => {
-        gradientAngle = (gradientAngle + 1) % 360;
-        heroSection.style.background = `
-            radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
-            #0f0f1e
-        `;
-    }, 50);
-}
+document.addEventListener('keydown', function(e) {
+    // Allow keyboard navigation through nav links
+    if (e.target.classList.contains('nav-link')) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            e.target.click();
+        }
+    }
+});
 
 // ==================== 
-// Skill Tags Hover Effect
+// Copy Email on Click
 // ==================== 
-const skillTags = document.querySelectorAll('.skill-tag');
-
-skillTags.forEach(tag => {
-    tag.addEventListener('mouseenter', () => {
-        skillTags.forEach(otherTag => {
-            if (otherTag !== tag) {
-                otherTag.style.opacity = '0.5';
-            }
-        });
-    });
-    
-    tag.addEventListener('mouseleave', () => {
-        skillTags.forEach(otherTag => {
-            otherTag.style.opacity = '1';
-        });
+document.querySelectorAll('a[href^="mailto:"]').forEach(emailLink => {
+    emailLink.addEventListener('click', function(e) {
+        // Allow normal email client opening, but also copy to clipboard
+        const email = this.href.replace('mailto:', '');
+        
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(email).then(() => {
+                // Optional: Show a temporary tooltip
+                const originalText = this.textContent;
+                this.textContent = 'Copied!';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 1500);
+            }).catch(err => {
+                console.log('Could not copy email:', err);
+            });
+        }
     });
 });
 
 // ==================== 
-// Project Card Tilt Effect
-// ==================== 
-const projectCards = document.querySelectorAll('.project-card');
-
-projectCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
-});
-
-// ==================== 
-// Lazy Loading for Images
+// Lazy Loading for Future Images
 // ==================== 
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                imageObserver.unobserve(img);
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
             }
         });
     });
-    
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    lazyImages.forEach(img => imageObserver.observe(img));
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
 }
 
 // ==================== 
-// Theme Toggle (Optional)
+// Console Message
 // ==================== 
-const createThemeToggle = () => {
-    const toggleButton = document.createElement('button');
-    toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-    toggleButton.className = 'theme-toggle';
-    toggleButton.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
-        z-index: 999;
-        transition: all 0.3s ease;
-    `;
-    
-    toggleButton.addEventListener('mouseenter', () => {
-        toggleButton.style.transform = 'scale(1.1)';
+console.log('%cJoongwon Chae - Portfolio', 'font-size: 20px; font-weight: bold; color: #2c3e50;');
+console.log('%cComputer Vision Researcher | Tsinghua University', 'font-size: 14px; color: #3498db;');
+console.log('%cGitHub: https://github.com/jw-chae', 'font-size: 12px; color: #666;');
+
+// ==================== 
+// Performance Monitoring (Optional)
+// ==================== 
+if (window.performance) {
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const perfData = window.performance.timing;
+            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+            console.log(`Page load time: ${pageLoadTime}ms`);
+        }, 0);
     });
-    
-    toggleButton.addEventListener('mouseleave', () => {
-        toggleButton.style.transform = 'scale(1)';
-    });
-    
-    document.body.appendChild(toggleButton);
-};
-
-// Uncomment to enable theme toggle
-// createThemeToggle();
-
-// ==================== 
-// Loading Animation
-// ==================== 
-window.addEventListener('load', () => {
-    document.body.style.overflow = 'auto';
-    
-    // Trigger initial animations
-    setTimeout(() => {
-        animateOnScroll();
-    }, 100);
-});
-
-// ==================== 
-// Console Easter Egg
-// ==================== 
-console.log('%c안녕하세요! 👋', 'font-size: 20px; font-weight: bold; color: #667eea;');
-console.log('%c개발자 콘솔을 열어주셔서 감사합니다!', 'font-size: 14px; color: #764ba2;');
-console.log('%c이 포트폴리오는 순수 HTML, CSS, JavaScript로 제작되었습니다.', 'font-size: 12px; color: #a8b2d1;');
-console.log('%cGitHub: https://github.com/jw-chae', 'font-size: 12px; color: #667eea;');
-
+}
