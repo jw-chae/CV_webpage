@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 미리보기 가이드</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.8;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .command {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 포트폴리오 웹사이트 완성!</h1>
+        
+        <div class="success">
+            <strong>✅ 완료됨:</strong> 모든 파일이 성공적으로 생성되었습니다!
+        </div>
+
+        <h2>📂 생성된 파일</h2>
+        <ul>
+            <li><code>index.html</code> - 메인 웹페이지</li>
+            <li><code>css/style.css</code> - 스타일시트</li>
+            <li><code>js/script.js</code> - JavaScript 인터랙션</li>
+            <li><code>README.md</code> - 프로젝트 문서</li>
+            <li><code>DEPLOY.md</code> - 배포 가이드</li>
+            <li><code>.gitignore</code> - Git 설정</li>
+        </ul>
+
+        <h2>🚀 로컬에서 미리보기</h2>
+        
+        <h3>방법 1: Python 간단 서버 (추천)</h3>
+        <div class="command">cd /home/joongwon00/CV_webpage<br>python3 -m http.server 8000</div>
+        <p>그런 다음 브라우저에서 <code>http://localhost:8000</code> 접속</p>
+
+        <h3>방법 2: 파일 직접 열기</h3>
+        <p>파일 탐색기에서 <code>index.html</code>을 더블클릭하거나 브라우저로 드래그</p>
+
+        <div class="note">
+            <strong>💡 팁:</strong> Python 서버를 사용하면 JavaScript의 모든 기능이 정상 작동합니다.
+        </div>
+
+        <h2>📤 GitHub에 배포하기</h2>
+        
+        <h3>1단계: GitHub에 저장소 생성</h3>
+        <ol>
+            <li><a href="https://github.com/new" target="_blank">github.com/new</a> 방문</li>
+            <li>Repository name: <code>CV_webpage</code></li>
+            <li>Public 선택</li>
+            <li>"Create repository" 클릭</li>
+        </ol>
+
+        <h3>2단계: 코드 푸시</h3>
+        <div class="command">cd /home/joongwon00/CV_webpage<br>git remote add origin https://github.com/jw-chae/CV_webpage.git<br>git commit -m "Initial commit: Personal portfolio website"<br>git push -u origin main</div>
+
+        <h3>3단계: GitHub Pages 활성화</h3>
+        <ol>
+            <li>GitHub 저장소 → Settings → Pages</li>
+            <li>Source: <code>main</code> 브랜치 선택</li>
+            <li>Save 클릭</li>
+            <li>몇 분 후 <code>https://jw-chae.github.io/CV_webpage/</code>에서 확인</li>
+        </ol>
+
+        <h2>✨ 주요 기능</h2>
+        <ul>
+            <li>✅ 반응형 디자인 (모바일/태블릿/데스크톱)</li>
+            <li>✅ 부드러운 스크롤 애니메이션</li>
+            <li>✅ 3D 카드 효과</li>
+            <li>✅ 숫자 카운터 애니메이션</li>
+            <li>✅ 타이핑 효과</li>
+            <li>✅ 다크 테마</li>
+            <li>✅ 실제 GitHub 프로젝트 링크</li>
+            <li>✅ 연락처 정보 (이메일, LinkedIn, GitHub)</li>
+        </ul>
+
+        <h2>🎯 포함된 프로젝트</h2>
+        <ul>
+            <li><strong>SAM2 GUI</strong> - SAM2용 GUI 인터페이스</li>
+            <li><strong>pLDDT Predictor</strong> - 단백질 구조 예측</li>
+            <li><strong>Memory-SAM</strong> - 메모리 효율적 세그멘테이션</li>
+            <li><strong>SAM2 Realtime</strong> - 실시간 세그멘테이션</li>
+            <li><strong>GRID-AUGMENTED-VISION</strong> - 객체 추적 연구</li>
+            <li><strong>SJTU Projects</strong> - 학술 프로젝트</li>
+        </ul>
+
+        <h2>📧 연락처 정보</h2>
+        <ul>
+            <li>📧 개인 이메일: <code>joongwon00@gmail.com</code></li>
+            <li>🎓 대학 이메일: <code>cai-zy24@mails.tsinghua.edu.cn</code></li>
+            <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/chae-joongwon-a668572a9/" target="_blank">Chae Joongwon</a></li>
+            <li>💻 GitHub: <a href="https://github.com/jw-chae" target="_blank">@jw-chae</a></li>
+        </ul>
+
+        <h2>📚 더 많은 정보</h2>
+        <p>상세한 커스터마이징 및 배포 가이드는 다음 파일을 참고하세요:</p>
+        <ul>
+            <li><code>README.md</code> - 전체 프로젝트 문서</li>
+            <li><code>DEPLOY.md</code> - 배포 상세 가이드</li>
+        </ul>
+
+        <div class="success">
+            <strong>🎊 축하합니다!</strong><br>
+            포트폴리오 웹사이트가 준비되었습니다. 이제 브라우저에서 미리보고 GitHub에 배포하세요!
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; color: #999;">
+            Made with ❤️ | 2025 Joongwon Chae
+        </p>
+    </div>
+</body>
+</html>
+
