@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joongwon Chae - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">JW Chae</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">안녕하세요,<br>저는 <span class="gradient-text">채중원</span>입니다</h1>
+                <p class="hero-subtitle">Computer Vision Researcher | Tsinghua University</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+                    <a href="#contact" class="btn btn-secondary">연락하기</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-circle">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Computer Vision과 AI 분야를 연구하는 청화대학교(Tsinghua University) 학생입니다. 
+                        SAM2, 3D Vision, 단백질 구조 예측 등 다양한 컴퓨터 비전 프로젝트를 진행하고 있으며,
+                        딥러닝을 활용한 실용적인 솔루션 개발에 관심이 있습니다.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h3>Education</h3>
+                                <p>Tsinghua University (清华大学)</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h3>Research Focus</h3>
+                                <p>Computer Vision, Deep Learning</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Shenzhen, China</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">GitHub Repos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="27">0</div>
+                        <div class="stat-label">Stars Earned</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="7">0</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">CUDA</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI & ML</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Deep Learning</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">OpenCV</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data & Research</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">FAISS</span>
+                        <span class="skill-tag">Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-desktop project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>SAM2 GUI</h3>
+                        <p>Segment Anything Model 2를 위한 사용자 친화적인 GUI 인터페이스. 실시간 세그멘테이션 도구.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SAM2</span>
+                            <span class="tag">GUI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jw-chae/sam2_gui" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-dna project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>pLDDT Predictor</h3>
+                        <p>단백질 구조 예측의 신뢰도(pLDDT)를 평가하는 머신러닝 모델. 구조 생물학 연구 지원.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">ML</span>
+                            <span class="tag">Bioinformatics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jw-chae/pLDDT_Predictor" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-memory project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Memory-SAM</h3>
+                        <p>메모리 효율적인 Segment Anything Model 구현. 비디오 세그멘테이션 최적화.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Video Segmentation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jw-chae/memory-sam" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-eye project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>SAM2 Realtime</h3>
+                        <p>실시간 세그멘테이션을 위한 SAM2 구현. Jupyter Notebook 기반 인터랙티브 데모.</p>
+                        <div class="project-tags">
+                            <span class="tag">Jupyter</span>
+                            <span class="tag">Real-time</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jw-chae/sam2_realtime" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-border-all project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>GRID-AUGMENTED-VISION</h3>
+                        <p>명시적 공간 참조를 통해 AI의 객체 위치 추적 능력을 향상시키는 연구 프로젝트.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Research</span>
+                            <span class="tag">Object Tracking</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jw-chae/GRID-AUGMENTED-VISION" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-university project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>SJTU Projects</h3>
+                        <p>상해교통대학교 관련 프로젝트 모음. 다양한 알고리즘 및 데이터 구조 구현.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Algorithms</span>
+                            <span class="tag">Academic</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jw-chae/SJTU" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-description">
+                        새로운 프로젝트나 협업 기회에 대해 이야기하고 싶으시다면 언제든 연락 주세요!
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:joongwon00@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>joongwon00@gmail.com</span>
+                        </a>
+                        <a href="mailto:cai-zy24@mails.tsinghua.edu.cn" class="contact-method">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>cai-zy24@mails.tsinghua.edu.cn</span>
+                        </a>
+                        <a href="https://github.com/jw-chae" class="contact-method" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/jw-chae</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/chae-joongwon-a668572a9/" class="contact-method" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="이름" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="이메일" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="메시지" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">메시지 보내기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/jw-chae" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/chae-joongwon-a668572a9/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:joongwon00@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>&copy; 2025 Joongwon Chae. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
