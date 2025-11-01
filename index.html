@@ -1,310 +1,330 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joongwon Chae - Computer Vision Researcher</title>
+    <title>Joongwon Chae</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1 class="name">Joongwon Chae</h1>
-            <p class="subtitle">채중원</p>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#publications" class="nav-link" data-section="publications">Publications</a></li>
-                <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="logo">
+                <a href="#about">Joongwon Chae</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">about</a></li>
+                <li><a href="#education">education</a></li>
+                <li><a href="#publications">publications</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <!-- Main Content -->
     <main class="main-content">
-        <div class="container">
-            <!-- Home Section -->
-            <section id="home" class="section active">
-                <div class="profile-header">
-                    <div class="profile-image-placeholder">
-                        <div class="initials">JC</div>
-                    </div>
-                    <div class="profile-info">
-                        <h2>Computer Vision Researcher</h2>
-                        <p class="affiliation">Tsinghua University</p>
-                    </div>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h1 class="main-title">Joongwon Chae</h1>
+            <p class="subtitle">Tsinghua University. Computer Vision and Machine Learning</p>
+
+            <div class="profile-container">
+                <div class="profile-placeholder">JC</div>
+            </div>
+
+            <div class="bio">
+                <p>
+                    Hi! I'm a graduate researcher at <strong>Tsinghua University</strong> (Shenzhen International Graduate School), 
+                    working at the Institute of Biopharmaceutical and Health Engineering. 
+                    My research is advised by <strong>Peiwu Qin</strong>.
+                </p>
+                <p>
+                    I work on <strong>computer vision</strong> and <strong>machine learning</strong>, with a particular focus 
+                    on medical image analysis and clinical decision support systems. I'm interested in developing practical AI 
+                    solutions that can support healthcare professionals and improve patient outcomes.
+                </p>
+                <p>
+                    My research spans image segmentation, large language models for medical applications, and 
+                    biomarker discovery using machine learning. I actively contribute to open-source projects, 
+                    particularly in the area of visual segmentation with SAM2 (Segment Anything Model).
+                </p>
+            </div>
+
+            <h2 class="section-heading">research interests</h2>
+            <p>I'm currently thinking a lot about:</p>
+            <ul class="interests-list">
+                <li><strong>Medical Image Analysis:</strong> Developing AI systems for cancer staging, radiological report analysis, and clinical decision support.</li>
+                <li><strong>Large Language Models in Healthcare:</strong> Leveraging LLMs to augment medical diagnosis and improve information extraction from clinical reports.</li>
+                <li><strong>Computer Vision:</strong> Image segmentation, object detection, and 3D reconstruction with applications in medical imaging and beyond.</li>
+                <li><strong>Practical AI Systems:</strong> Building robust, interpretable, and memory-efficient models for real-world deployment.</li>
+            </ul>
+
+            <h2 class="section-heading">news</h2>
+            <table class="news-table">
+                <tr>
+                    <td class="date">Aug 1, 2025</td>
+                    <td>Our paper on gallbladder cancer staging using machine learning and DeepSeek-R1 was published in <strong>Frontiers in Oncology</strong>!</td>
+                </tr>
+                <tr>
+                    <td class="date">2024</td>
+                    <td>Released <strong>SAM2 GUI</strong> - a user-friendly interface for the Segment Anything Model 2</td>
+                </tr>
+                <tr>
+                    <td class="date">2024</td>
+                    <td>Published <strong>Memory-SAM</strong> - memory-efficient implementation for video segmentation</td>
+                </tr>
+                <tr>
+                    <td class="date">2024</td>
+                    <td>Contributed to multiple arXiv preprints on computer vision and machine learning</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h1 class="page-title">education</h1>
+
+            <div class="education-item">
+                <div class="institution-logo">
+                    <div class="logo-placeholder">THU</div>
                 </div>
-
-                <div class="content-block">
-                    <h3>Who Am I?</h3>
-                    <p>
-                        I am a Computer Vision researcher at Tsinghua University (Shenzhen International Graduate School), 
-                        focusing on practical applications of deep learning in medical imaging and visual recognition systems.
-                    </p>
-                    <p>
-                        My research interests include:
-                    </p>
-                    <ul class="research-interests">
-                        <li>Computer Vision & Image Segmentation</li>
-                        <li>Medical Image Analysis</li>
-                        <li>Machine Learning & Deep Learning</li>
-                        <li>Large Language Models in Healthcare</li>
-                        <li>3D Vision & Reconstruction</li>
-                        <li>Object Detection & Tracking</li>
-                    </ul>
-                </div>
-
-                <div class="content-block">
-                    <h3>Research Focus</h3>
-                    <p>
-                        My work focuses on developing practical computer vision solutions with applications in medical imaging 
-                        and clinical decision support. I have published research on using machine learning and large language models 
-                        for cancer staging, and I actively contribute to open-source projects related to visual segmentation, 
-                        particularly the Segment Anything Model (SAM2).
-                    </p>
-                </div>
-
-                <div class="content-block">
-                    <h3>Background</h3>
-                    <p>
-                        Currently pursuing research at Tsinghua University's Shenzhen International Graduate School 
-                        at the Institute of Biopharmaceutical and Health Engineering. I maintain an active presence in 
-                        the open-source community with 12+ repositories and growing contributions to computer vision research.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="section">
-                <h2 class="section-title">Research Projects</h2>
-
-                <div class="project-item">
-                    <h3>SAM2 GUI</h3>
-                    <p class="project-meta">Python • Computer Vision • GUI Development</p>
-                    <p class="project-description">
-                        A user-friendly graphical interface for the Segment Anything Model 2 (SAM2). 
-                        Provides intuitive tools for real-time image segmentation with interactive annotation capabilities.
-                    </p>
-                    <p class="project-links">
-                        <a href="https://github.com/jw-chae/sam2_gui" target="_blank">GitHub Repository</a>
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>pLDDT Predictor</h3>
-                    <p class="project-meta">Machine Learning • Bioinformatics • Protein Structure</p>
-                    <p class="project-description">
-                        A machine learning-based model for predicting the confidence of protein structure predictions 
-                        (pLDDT: predicted Local Distance Difference Test). Supports structural biology research 
-                        by providing reliability assessments for protein models.
-                    </p>
-                    <p class="project-links">
-                        <a href="https://github.com/jw-chae/pLDDT_Predictor" target="_blank">GitHub Repository</a>
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>Memory-SAM</h3>
-                    <p class="project-meta">Deep Learning • Video Segmentation • Memory Optimization</p>
-                    <p class="project-description">
-                        A memory-efficient implementation of the Segment Anything Model. Optimized to perform 
-                        high-quality video segmentation on limited hardware resources, making SAM more accessible 
-                        for resource-constrained environments.
-                    </p>
-                    <p class="project-links">
-                        <a href="https://github.com/jw-chae/memory-sam" target="_blank">GitHub Repository</a>
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>SAM2 Realtime</h3>
-                    <p class="project-meta">Real-time Processing • Jupyter Notebook • Interactive Demo</p>
-                    <p class="project-description">
-                        Real-time implementation of SAM2 for interactive segmentation tasks. Features a Jupyter Notebook-based 
-                        demo that allows users to test and evaluate model performance in real-time scenarios.
-                    </p>
-                    <p class="project-links">
-                        <a href="https://github.com/jw-chae/sam2_realtime" target="_blank">GitHub Repository</a>
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>GRID-AUGMENTED-VISION</h3>
-                    <p class="project-meta">Research Project • Object Tracking • Spatial Reference</p>
-                    <p class="project-description">
-                        Research project demonstrating that explicit spatial references (grid-based augmentation) can 
-                        significantly enhance AI's ability to precisely locate and track objects without complex 
-                        architectural modifications.
-                    </p>
-                    <p class="project-links">
-                        <a href="https://github.com/jw-chae/GRID-AUGMENTED-VISION" target="_blank">GitHub Repository</a>
-                    </p>
-                </div>
-
-                <div class="project-item">
-                    <h3>SJTU Projects</h3>
-                    <p class="project-meta">Academic Projects • Algorithms • Data Structures</p>
-                    <p class="project-description">
-                        Collection of academic projects from Shanghai Jiao Tong University (SJTU). 
-                        Includes implementations of various algorithms and data structures.
-                    </p>
-                    <p class="project-links">
-                        <a href="https://github.com/jw-chae/SJTU" target="_blank">GitHub Repository</a>
-                    </p>
-                </div>
-            </section>
-
-            <!-- Publications Section -->
-            <section id="publications" class="section">
-                <h2 class="section-title">Publications & Research</h2>
-                
-                <div class="content-block">
-                    <h3>Journal Publications</h3>
-                    <ul class="publications-list">
-                        <li>
-                            <strong>Chae, J.</strong>, Wang, Z., Wu, D., Zhang, L., Tuzikov, A., Madiyevich, M. T., Xu, M., Yu, D., & Qin, P. (2025).
-                            <br><em>Pre-operative T-stage discrimination in gallbladder cancer using machine learning and DeepSeek-R1</em>
-                            <br><span class="pub-venue">Frontiers in Oncology, 15:1613462. doi: 10.3389/fonc.2025.1613462</span>
-                            <br><a href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2025.1613462/full" target="_blank">View Publication</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content-block">
-                    <h3>Preprints</h3>
-                    <ul class="publications-list">
-                        <li>
-                            <strong>arXiv:2411.18270</strong>
-                            <br><span class="pub-venue">arXiv preprint</span>
-                            <br><a href="https://arxiv.org/abs/2411.18270" target="_blank">View on arXiv</a>
-                        </li>
-                        <li>
-                            <strong>arXiv:2510.15849</strong>
-                            <br><span class="pub-venue">arXiv preprint</span>
-                            <br><a href="https://arxiv.org/abs/2510.15849" target="_blank">View on arXiv</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content-block">
-                    <h3>Open Source Contributions</h3>
-                    <ul class="publications-list">
-                        <li>
-                            <strong>SAM2 GUI</strong> - User interface for Segment Anything Model 2
-                            <br><span class="pub-venue">GitHub Repository, 2024</span>
-                        </li>
-                        <li>
-                            <strong>pLDDT Predictor</strong> - Machine learning model for protein structure confidence prediction
-                            <br><span class="pub-venue">GitHub Repository, 2024</span>
-                        </li>
-                        <li>
-                            <strong>Memory-SAM</strong> - Memory-efficient video segmentation system
-                            <br><span class="pub-venue">GitHub Repository, 2024</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience" class="section">
-                <h2 class="section-title">Experience & Education</h2>
-
-                <div class="experience-item">
+                <div class="institution-info">
                     <h3>Tsinghua University</h3>
-                    <p class="experience-role">Graduate Researcher</p>
-                    <p class="experience-location">Shenzhen International Graduate School, Shenzhen, China</p>
-                    <p class="experience-description">
-                        Conducting research at the Institute of Biopharmaceutical and Health Engineering. 
-                        Focus areas include medical image analysis, computer vision, and machine learning applications 
-                        in healthcare. Published research on cancer staging using deep learning and large language models.
+                    <p class="degree">Graduate Student | 2023 – Present</p>
+                    <p class="department"><strong>Affiliations:</strong> Institute of Biopharmaceutical and Health Engineering, Shenzhen International Graduate School</p>
+                    <p class="location">Shenzhen, Guangdong, China</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <h1 class="page-title">publications</h1>
+
+            <div class="publication-item">
+                <div class="pub-image">
+                    <div class="pub-placeholder">📄</div>
+                </div>
+                <div class="pub-content">
+                    <h3>Pre-operative T-stage discrimination in gallbladder cancer using machine learning and DeepSeek-R1</h3>
+                    <p class="authors">
+                        <strong>Joongwon Chae</strong>, Zhenyu Wang, Duanpo Wu, Lian Zhang, Alexander Tuzikov, 
+                        Magrupov Talat Madiyevich, Min Xu, Dongmei Yu, Peiwu Qin
+                    </p>
+                    <p class="venue">
+                        <em>Frontiers in Oncology</em>, Volume 15, 2025
+                    </p>
+                    <p class="links">
+                        <a href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2025.1613462/full" target="_blank">Paper</a>
+                    </p>
+                    <p class="description">
+                        We assessed whether routine blood biomarkers can distinguish early T stages via machine learning 
+                        and compared the T-stage discrimination performance of DeepSeek-R1 when supplied with radiology-report 
+                        text alone versus radiology-report text plus blood-biomarker values.
                     </p>
                 </div>
+            </div>
 
-                <div class="content-block">
-                    <h3>Research Interests</h3>
-                    <ul class="skills-list">
-                        <li><strong>Medical Imaging:</strong> Cancer staging, radiological report analysis, clinical decision support</li>
-                        <li><strong>Computer Vision:</strong> Image segmentation, object detection, video analysis, 3D reconstruction</li>
-                        <li><strong>Machine Learning:</strong> Deep learning, large language models, biomarker discovery</li>
-                        <li><strong>Applications:</strong> Healthcare AI, precision medicine, diagnostic systems</li>
-                    </ul>
+            <h2 class="section-heading">preprints</h2>
+
+            <div class="publication-item">
+                <div class="pub-image">
+                    <div class="pub-placeholder">📝</div>
                 </div>
-
-                <div class="content-block">
-                    <h3>Technical Skills</h3>
-                    <ul class="skills-list">
-                        <li><strong>Programming:</strong> Python, C++, JavaScript, CUDA</li>
-                        <li><strong>Deep Learning:</strong> PyTorch, TensorFlow, OpenCV</li>
-                        <li><strong>Computer Vision:</strong> SAM2, Segmentation, Object Detection, 3D Vision</li>
-                        <li><strong>ML/AI:</strong> Large Language Models (LLMs), DeepSeek, Scikit-learn</li>
-                        <li><strong>Tools:</strong> Git, Docker, Jupyter, Linux, FAISS</li>
-                        <li><strong>Research:</strong> Medical Image Analysis, Statistical Computing, Data Science</li>
-                    </ul>
+                <div class="pub-content">
+                    <h3>arXiv:2411.18270</h3>
+                    <p class="venue">
+                        <em>arXiv preprint</em>, 2024
+                    </p>
+                    <p class="links">
+                        <a href="https://arxiv.org/abs/2411.18270" target="_blank">View on arXiv</a>
+                    </p>
                 </div>
+            </div>
 
-                <div class="content-block">
-                    <h3>Community & Metrics</h3>
-                    <ul class="stats-list">
-                        <li>12+ Public Repositories</li>
-                        <li>27+ Stars Received on GitHub</li>
-                        <li>7 Followers</li>
-                        <li>Active Open Source Contributor</li>
-                        <li>Published in Frontiers in Oncology</li>
-                        <li>Multiple arXiv Preprints</li>
-                    </ul>
+            <div class="publication-item">
+                <div class="pub-image">
+                    <div class="pub-placeholder">📝</div>
                 </div>
-            </section>
+                <div class="pub-content">
+                    <h3>arXiv:2510.15849</h3>
+                    <p class="venue">
+                        <em>arXiv preprint</em>, 2024
+                    </p>
+                    <p class="links">
+                        <a href="https://arxiv.org/abs/2510.15849" target="_blank">View on arXiv</a>
+                    </p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Contact Section -->
-            <section id="contact" class="section">
-                <h2 class="section-title">Contact Information</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h1 class="page-title">projects</h1>
+            <p class="section-intro">For more projects, please visit my <a href="https://github.com/jw-chae" target="_blank">GitHub</a></p>
 
-                <div class="contact-info">
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="project-placeholder">🖥️</div>
+                </div>
+                <div class="project-content">
+                    <h3>SAM2 GUI</h3>
+                    <p class="project-type">[Open Source Project] @ GitHub</p>
+                    <p class="links">
+                        <a href="https://github.com/jw-chae/sam2_gui" target="_blank">Code</a>
+                    </p>
+                    <p class="description">
+                        A user-friendly graphical interface for the Segment Anything Model 2 (SAM2). Provides intuitive tools 
+                        for real-time image segmentation with interactive annotation capabilities, making advanced segmentation 
+                        technology accessible to researchers and practitioners.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="project-placeholder">🧬</div>
+                </div>
+                <div class="project-content">
+                    <h3>pLDDT Predictor</h3>
+                    <p class="project-type">[Research Project] Machine Learning for Bioinformatics</p>
+                    <p class="links">
+                        <a href="https://github.com/jw-chae/pLDDT_Predictor" target="_blank">Code</a>
+                    </p>
+                    <p class="description">
+                        A machine learning-based model for predicting the confidence of protein structure predictions 
+                        (pLDDT: predicted Local Distance Difference Test). Supports structural biology research by providing 
+                        reliability assessments for protein models, helping researchers identify high-quality predictions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="project-placeholder">💾</div>
+                </div>
+                <div class="project-content">
+                    <h3>Memory-SAM</h3>
+                    <p class="project-type">[Research Project] Memory-Efficient Deep Learning</p>
+                    <p class="links">
+                        <a href="https://github.com/jw-chae/memory-sam" target="_blank">Code</a>
+                    </p>
+                    <p class="description">
+                        A memory-efficient implementation of the Segment Anything Model. Optimized to perform high-quality 
+                        video segmentation on limited hardware resources, making SAM more accessible for resource-constrained 
+                        environments and enabling deployment on edge devices.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="project-placeholder">⚡</div>
+                </div>
+                <div class="project-content">
+                    <h3>SAM2 Realtime</h3>
+                    <p class="project-type">[Research Demo] Real-time Segmentation</p>
+                    <p class="links">
+                        <a href="https://github.com/jw-chae/sam2_realtime" target="_blank">Code</a>
+                    </p>
+                    <p class="description">
+                        Real-time implementation of SAM2 for interactive segmentation tasks. Features a Jupyter Notebook-based 
+                        demo that allows users to test and evaluate model performance in real-time scenarios, facilitating 
+                        rapid prototyping and experimentation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="project-placeholder">🎯</div>
+                </div>
+                <div class="project-content">
+                    <h3>GRID-AUGMENTED-VISION</h3>
+                    <p class="project-type">[Research Project] Object Tracking and Spatial Reference</p>
+                    <p class="links">
+                        <a href="https://github.com/jw-chae/GRID-AUGMENTED-VISION" target="_blank">Code</a>
+                    </p>
+                    <p class="description">
+                        Research project demonstrating that explicit spatial references (grid-based augmentation) can 
+                        significantly enhance AI's ability to precisely locate and track objects without complex architectural 
+                        modifications. Shows that simple augmentation strategies can yield substantial improvements in object tracking.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <div class="project-placeholder">🎓</div>
+                </div>
+                <div class="project-content">
+                    <h3>SJTU Projects</h3>
+                    <p class="project-type">[Academic Projects] Algorithms and Data Structures</p>
+                    <p class="links">
+                        <a href="https://github.com/jw-chae/SJTU" target="_blank">Code</a>
+                    </p>
+                    <p class="description">
+                        Collection of academic projects from Shanghai Jiao Tong University (SJTU). Includes implementations 
+                        of various algorithms and data structures, covering topics in computational complexity, optimization, 
+                        and efficient algorithm design.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h1 class="page-title">contact</h1>
+
+            <div class="contact-content">
+                <h2 class="section-heading">get in touch</h2>
+                <p>
+                    I am open to research collaborations, academic discussions, and project inquiries. 
+                    Feel free to reach out via email or connect with me on social media.
+                </p>
+
+                <div class="contact-methods">
                     <div class="contact-item">
-                        <h3>Email</h3>
+                        <strong>Email:</strong>
                         <p><a href="mailto:joongwon00@gmail.com">joongwon00@gmail.com</a></p>
                         <p><a href="mailto:cai-zy24@mails.tsinghua.edu.cn">cai-zy24@mails.tsinghua.edu.cn</a></p>
                     </div>
 
                     <div class="contact-item">
-                        <h3>Online Presence</h3>
-                        <p><a href="https://github.com/jw-chae" target="_blank">GitHub: @jw-chae</a></p>
-                        <p><a href="https://www.linkedin.com/in/chae-joongwon-a668572a9/" target="_blank">LinkedIn Profile</a></p>
+                        <strong>GitHub:</strong>
+                        <p><a href="https://github.com/jw-chae" target="_blank">@jw-chae</a></p>
                     </div>
 
                     <div class="contact-item">
-                        <h3>Affiliation</h3>
+                        <strong>LinkedIn:</strong>
+                        <p><a href="https://www.linkedin.com/in/chae-joongwon-a668572a9/" target="_blank">Chae Joongwon</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Affiliation:</strong>
                         <p>Tsinghua University</p>
                         <p>Shenzhen International Graduate School</p>
                         <p>Shenzhen, Guangdong, China</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="content-block">
-                    <p>
-                        I am open to research collaborations, academic discussions, and project inquiries. 
-                        Feel free to reach out via email or connect with me on GitHub and LinkedIn.
-                    </p>
-                </div>
-            </section>
-        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; Copyright 2025 Joongwon Chae. Last updated: November 2025.</p>
+        </footer>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Joongwon Chae. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="js/script.js"></script>
 </body>
