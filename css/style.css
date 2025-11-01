@@ -178,6 +178,14 @@ a:hover {
     margin: 30px 0 40px 0;
 }
 
+.profile-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .profile-placeholder {
     width: 200px;
     height: 200px;
@@ -259,6 +267,13 @@ a:hover {
     flex-shrink: 0;
 }
 
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
 .logo-placeholder {
     width: 100px;
     height: 100px;
@@ -270,6 +285,12 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
+}
+
+.note {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 5px;
 }
 
 .institution-info h3 {
@@ -293,6 +314,40 @@ a:hover {
 .location {
     color: var(--text-secondary);
     font-style: italic;
+}
+
+/* ==================== 
+   Awards 
+   ==================== */
+.award-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.award-item:last-child {
+    border-bottom: none;
+}
+
+.award-date {
+    width: 80px;
+    flex-shrink: 0;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.award-content strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.award-content p {
+    color: var(--text-secondary);
+    margin: 0;
 }
 
 /* ==================== 
